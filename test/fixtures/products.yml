@@ -1,0 +1,13 @@
+one:
+  title: MyString
+  price: 9.99
+  description: MyText
+  image_url: MyString
+  buy_button: MyText
+
+two:
+  title: MyString
+  price: 9.99
+  description: MyText
+  image_url: MyString
+  buy_button: MyText

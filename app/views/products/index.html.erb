@@ -1,0 +1,65 @@
+<div class="hero-unit">
+  <h1>Nufolka Complementos</h1>
+  <h2>Complementos para tu estilo</h2>
+</div>
+
+<% content_for :test do %>
+	
+	<div class="span3 bs-docs-sidebar">
+    	<ul class="nav nav-list bs-docs-sidenav affix">
+		          <li class=""><a href="#download-bootstrap"><i class="icon-chevron-right"></i> Download</a></li>
+		          <li class=""><a href="#file-structure"><i class="icon-chevron-right"></i> File structure</a></li>
+		          <li class=""><a href="#contents"><i class="icon-chevron-right"></i> What's included</a></li>
+		          <li><a href="#examples"><i class="icon-chevron-right"></i> Examples</a></li>
+		          <li><a href="#what-next"><i class="icon-chevron-right"></i> What next?</a></li>
+		        </ul>
+  </div>
+
+
+
+<% end %>
+
+<% title "Products" %>
+<div class="container">
+	
+	<div class="clearfix masonry" id="contenedor">
+		  
+		<% @products.each do |product| %>
+				<div class="span4">	
+						<div class="box photo col3 masonry-brick">
+	            			<h2><%= product.title %></h2>
+							<p><%= image_tag "/nufolka/#{product.image_url}" %></p>
+							<div class="caption">
+								<p>Descripción: <span><%= print_description(product.description) %></span></p>
+								<p>Precio: <span><strong><%= print_price(product.price) %></strong></span></p>
+								<p><%= link_to "View", product_path(product) %></p>
+								
+								<p><%= link_to "Edit", product_path(product), {:remote => true, 'data-controls-modal' =>  "modal-window", 'data-backdrop' => true, 'data-keyboard' => true} %></p>
+								
+								
+						    </div>
+			            </div>
+		         </div>
+		 <% end %>
+	</div>
+</div>
+
+
+
+	
+<script> 
+ 
+  $(function(){
+
+    var $container = $('#contenedor');
+  
+    $container.imagesLoaded( function(){
+      $container.masonry({
+        itemSelector : '.box'
+      });
+    });
+  
+  });
+  </script>
+
+			

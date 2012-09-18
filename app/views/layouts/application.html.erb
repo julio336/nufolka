@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	  <title>NuFolka Complementos | Diseño Textil Mexicano <%= controller.action_name %></title>  
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "jquery", "application" %>
+
+    <%= csrf_meta_tag %>
+    <%= yield(:head) %>
+  </head>
+	<body data-spy="scroll" data-target=".bs-docs-sidebar" data-twttr-rendered="true">
+	
+<p style="color: green"><%= flash[:notice] %></p>
+
+<div class="wrapper">
+	<%= render 'layouts/header' %>
+      <div class="sidebar">
+    </div>
+	<div style="background-image:url('/background.gif');background-repeat:repeat;"class="well">
+
+	  
+	    <div class="row">
+	      <%= yield(:test)%>
+	      <div class="span12">
+      		<%= yield %>
+
+			<div class="modal-body" id="modal-window">
+			</div>
+
+    	</div>
+	</div>
+</div>
+	<%= render 'layouts/footer' %>
+</div>
+</body>
+</html>

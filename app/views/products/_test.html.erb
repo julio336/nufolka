@@ -1,0 +1,23 @@
+<div class="modal" id="modal-window">
+  <div class="modal-header">
+	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	<h2><%= @product.title %></h2>
+  </div>
+  <div class="modal-body center">
+	<div class="row">
+     	<div class="span4">	
+			<p><%= link_to image_tag("/nufolka/#{@product.image_url}", :border => 0, :alt => '', :title => ''), product_path, :class => 'dock-item'%></p>
+			
+		</div>
+		<div class="span4">
+			<div class="caption">
+				<p>Descripción: <span><%= print_description(@product.description) %></span></p>
+				<p>Precio: <span><strong><%= print_price(@product.price) %></strong></span></p>
+				<p><%= link_to "View", product_path(@product) %></p>
+	  		
+  			</div>
+		</div>
+	</div>
+  	<div class="modal-footer">&nbsp;</div>
+  </div>
+</div>
